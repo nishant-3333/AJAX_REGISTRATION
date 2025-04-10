@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AJAX Registration</title>
+  <script src="register.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h2>Registration Form</h2>
+  <form id="registrationForm" onsubmit="return registerUser(event)">
+    <label>Name:</label><br>
+    <input type="text" id="name" required><br>
+
+    <label>College:</label><br>
+    <input type="text" id="college" onkeyup="suggestCollege()" autocomplete="off"><br>
+    <div id="suggestions" style="color: blue;"></div><br>
+
+    <label>Username:</label><br>
+    <input type="text" id="username" onblur="checkUsername()" required><br>
+    <div id="userMsg" style="color: red;"></div><br>
+
+    <label>Password:</label><br>
+    <input type="password" id="password" required><br>
+
+    <label>Retype Password:</label><br>
+    <input type="password" id="repassword" onkeyup="validatePassword()" required><br>
+    <div id="passMsg" style="color: red;"></div><br>
+
+    <button type="submit">Register</button>
+  </form>
+
+  <div id="resultMsg" style="margin-top: 20px; color: green;"></div>
+</body>
+</html>
